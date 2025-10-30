@@ -23,7 +23,7 @@ jobs:
       run: powershell Compress-Archive -Path ./publish/win-x64/* -DestinationPath swpumc-win-x64.zip
 
     - name: Upload Windows artifact
-      uses: actions/upload-release-asset@v2
+      uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ github.event.release.upload_url }}
         asset_path: ./swpumc-win-x64.zip
@@ -52,7 +52,7 @@ jobs:
         tar -czvf ../../swpumc-linux-x64.tar.gz .
 
     - name: Upload Linux artifact
-      uses: actions/upload-release-asset@v2
+      uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ github.event.release.upload_url }}
         asset_path: ./swpumc-linux-x64.tar.gz
